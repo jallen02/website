@@ -1,0 +1,38 @@
+name: Deploy site
+on:
+  workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions: write-all
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Install Rust toolchain
+        # You may pin to the exact commit or the version.
+        # uses: actions-rs/toolchain@b2417cde72dcf67f306c0ae8e0828a81bf0b189f
+        uses: actions-rs/toolchain@v1.0.6
+        with:
+          toolchain: nightly
+          override: true
+          target: wasm32-unknown-unknown
+
+      - name: Install trunk
+        uses: jetli/trunk-action@v0.2.0
+        with:
+          # Optional version of trunk to install(eg. 'v0.8.1', 'latest')
+          version: 'latest'
+
+      - name: Build artifacts
+        run: trunk build --release
+        
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v1.0.7
+        with:
+          # Path of the directory containing the static assets.
+          path: dist
+          
+      - name: Deploy GitHub Pages site
+        uses: actions/deploy-pages@v1.2.3
