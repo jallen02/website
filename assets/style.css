@@ -1,17 +1,24 @@
-.app {
-    padding: 15px
+* {
+    font-family: palatino
 }
 
-.profile_pic {
+.profilepic {
     border-radius: 50%;
     height: 200px;
     width: 200px;
 }
 
 .heading {
-    display: inline-block;
+    display: flex;
     padding: 10px;
+    vertical-align: middle;
 }
+
+.heading-item {
+    align-items: center;
+    display: block;
+}
+
 
 footer {
     position: fixed;
