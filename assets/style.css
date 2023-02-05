@@ -2,7 +2,11 @@
     font-family: palatino
 }
 
-.profilepic {
+.app {
+    padding: 15px
+}
+
+.profile-pic {
     border-radius: 50%;
     height: 200px;
     width: 200px;
