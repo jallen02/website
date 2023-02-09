@@ -1,5 +1,5 @@
 [[hooks]]
 stage = "pre_build"
 command = "sh"
-command_arguments = ["-c", "npx tailwindcss -i ./css/tailwind.css -o ./css/tailwind.generated.css"]
+command_arguments = ["-c", "npx tailwindcss -i ./css/tailwind.css -o ./css/tailwind.generated.css --minify"]
 
