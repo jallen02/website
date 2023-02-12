@@ -19,6 +19,17 @@ jobs:
           override: true
           target: wasm32-unknown-unknown
 
+      - name: Install mdbook
+        uses: actions-rs/cargo@v1
+        with:
+          command: install
+          args: mdbook
+
+      - name: Generate blog page
+        run: |
+          cd blog
+          mdbook build
+
       - name: Install trunk
         uses: jetli/trunk-action@v0.2.0
         with:
