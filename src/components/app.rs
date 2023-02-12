@@ -4,7 +4,9 @@ use leptos::{component, view, IntoView, Scope};
 #[component]
 pub fn App(cx: Scope) -> impl IntoView {
     view! { cx,
-        <Intro/>
-        <Blog/>
+        <div class="p-1">
+            <Intro/>
+            <Blog/>
+        </div>
     }
 }
