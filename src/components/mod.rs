@@ -1,3 +1,3 @@
 pub mod app;
 pub mod intro;
-pub mod posts;
+pub mod blog;
